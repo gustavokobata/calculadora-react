@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(9, 1fr);
-  background-color: gray;
+  background-color: #575757;
 }
 
 .calculator-body {
@@ -15,6 +15,7 @@
   grid-template-rows: repeat(7, 1fr);
   border-radius: 10px;
   padding: 5px;
+  box-shadow: 0px 1px 1px 1px black;
 }
 
 button {
@@ -22,14 +23,13 @@ button {
   margin: 2.5px;
   font-size: 3em;
   color: #fff;
+  cursor: pointer;
+  border-style: none;
+  box-shadow: 0px 1px 1px 1px black;
 }
 
-.left-side-button {
-  box-shadow: 2px 1px #000;
-}
-
-.right-side-button {
-  box-shadow: -2px 1px #000;
+button:hover {
+  opacity: 0.75;
 }
 
 .number-button {
@@ -46,7 +46,7 @@ button {
   background-color: #262626;
   border-radius: 10px;
   margin: 2.5px;
-  box-shadow: 0px 1px #000;
+  box-shadow: 0px 1px 1px 1px black;
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-end;
