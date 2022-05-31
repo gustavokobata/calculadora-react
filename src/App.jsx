@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // import Button from './components/Button';
 import './App.css';
 
 
-  const calculadora = () => {
+  const Calculator = () => {
+    const [num, setNum] = useState(0);
+
+    function inputNum(a) {
+      var input = a.target.value;
+      setNum(num + input);
+    }
+
     return(
       <section className='body'>
         <div className='calculator-body'>
@@ -23,7 +30,7 @@ import './App.css';
             <button className='number-button left-side-number number-four'>4</button>
             <button className='number-button left-side-number number-five'>5</button>
             <button className='number-button right-side-number number-six'>6</button>
-            <button className='operator-button right-side-number dividedby'>/</button>
+            <button className='operator-button right-side-number divide'>/</button>
 
             <button className='number-button left-side-number number-one'>1</button>
             <button className='number-button left-side-number number-two'>2</button>
@@ -37,4 +44,4 @@ import './App.css';
     )
   }
 
-export default calculadora;
+export default Calculator;
