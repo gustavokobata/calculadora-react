@@ -65,6 +65,7 @@ button:hover {
 .backspace {
   grid-area: 3 / 4 / 4 / 5;
   background-color: #064614;
+  text-align: center;
 }
 
 .plus {
@@ -105,7 +106,7 @@ button:hover {
   grid-area: 5 / 3 / 6 / 4;
 }
 
-.dividedby {
+.divide {
   grid-area: 5 / 4 / 6 / 5;
 }
 

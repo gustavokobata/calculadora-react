@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { CgCornerUpLeft } from "react-icons/cg";
 
-// import Button from './components/Button';
-import './Calculator.css';
+import './App.css';
 
 
   const Calculator = () => {
@@ -24,13 +24,13 @@ import './Calculator.css';
     function calculate() {
       switch(operator) {
         case "+":
-          return (setNum(parseFloat(prevNum) + parseFloat(num)).fixed(2));
+          return setNum((parseFloat(prevNum) + parseFloat(num)).toFixed(2));
         case "-":
-          return setNum(parseFloat(prevNum) - parseFloat(num));
+          return setNum((parseFloat(prevNum) - parseFloat(num)).toFixed(2));
         case "*":
-          return setNum(parseFloat(prevNum) * parseFloat(num));
+          return setNum((parseFloat(prevNum) * parseFloat(num)).toFixed(2));
         case "/":
-          return setNum(parseFloat(prevNum) / parseFloat(num));
+          return setNum((parseFloat(prevNum) / parseFloat(num)).toFixed(2));
         default:
           return "ERROR"
       }
@@ -38,6 +38,10 @@ import './Calculator.css';
 
     function clear() {
       setNum(0);
+    }
+
+    function deleteNumber() {
+      num ===  "" || num === 0 ? setNum(0) : setNum(num.toString().slice(0, -1));
     }
 
     return(
@@ -48,7 +52,7 @@ import './Calculator.css';
             <button className='left-side-number clear' onClick={clear}>C</button>
             <button className='operator-button left-side-number plus' onClick={operatorHandler} value="+">+</button>
             <button className='operator-button right-side-number minus' onClick={operatorHandler} value="-">-</button>
-            <button className='right-side-number backspace' onClick={inputNum}>BS</button>
+            <button className='right-side-number backspace' onClick={deleteNumber}><CgCornerUpLeft /></button>
 
             <button className='number-button left-side-number number-seven' onClick={inputNum} value={7}>7</button>
             <button className='number-button left-side-number number-eight' onClick={inputNum} value={8}>8</button>
@@ -66,7 +70,7 @@ import './Calculator.css';
             <button className='right-side-number equals' onClick={calculate}>=</button>
 
             <button className='number-button left-side-number number-zero' onClick={inputNum} value={0}>0</button>
-            <button className='number-button right-side-number comma' onClick={inputNum} value={"."}>,</button>
+            <button className='number-button right-side-number comma' onClick={inputNum} value={"."}>.</button>
         </div>
       </section>
     )
