@@ -24,7 +24,7 @@ import './App.css';
     function calculate() {
       switch(operator) {
         case "+":
-          return (setNum(parseFloat(prevNum) + parseFloat(num))).toFixed(2);
+          return (setNum(parseFloat(prevNum) + parseFloat(num)).fixed(2));
         case "-":
           return setNum(parseFloat(prevNum) - parseFloat(num));
         case "*":
