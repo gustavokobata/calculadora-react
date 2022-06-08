@@ -39,7 +39,7 @@ import './App.css';
     }
 
     function deleteNumber() {
-      
+      setNum(num.toString().slice(0, -1));
     }
 
     return(
