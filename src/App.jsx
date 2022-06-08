@@ -7,38 +7,42 @@ import './App.css';
   const Calculator = () => {
     const [num, setNum] = useState(0);
 
-    function inputNum(a) {
-      var input = a.target.value;
-      setNum(num + input);
+    function inputNum(e) {
+      var input = e.target.value;
+      num===0 ? setNum(input) : setNum(num + input);
+    }
+
+    function clear(e) {
+      setNum(0);
     }
 
     return(
       <section className='body'>
         <div className='calculator-body'>
-            <div className='display'>2139021</div>
+            <div className='display'>{num}</div>
 
-            <button className='left-side-number clear'>C</button>
-            <button className='operator-button left-side-number plus'>+</button>
-            <button className='operator-button right-side-number minus'>-</button>
-            <button className='right-side-number backspace'>BS</button>
+            <button className='left-side-number clear' onClick={clear}>C</button>
+            <button className='operator-button left-side-number plus' onClick={inputNum}>+</button>
+            <button className='operator-button right-side-number minus' onClick={inputNum}>-</button>
+            <button className='right-side-number backspace' onClick={inputNum}>BS</button>
 
-            <button className='number-button left-side-number number-seven'>7</button>
-            <button className='number-button left-side-number number-eight'>8</button>
-            <button className='number-button right-side-number number-nine'>9</button>
+            <button className='number-button left-side-number number-seven' onClick={inputNum} value={7}>7</button>
+            <button className='number-button left-side-number number-eight' onClick={inputNum} value={8}>8</button>
+            <button className='number-button right-side-number number-nine' onClick={inputNum} value={9}>9</button>
             <button className='operator-button right-side-number times'>*</button>
 
-            <button className='number-button left-side-number number-four'>4</button>
-            <button className='number-button left-side-number number-five'>5</button>
-            <button className='number-button right-side-number number-six'>6</button>
+            <button className='number-button left-side-number number-four' onClick={inputNum} value={4}>4</button>
+            <button className='number-button left-side-number number-five' onClick={inputNum} value={5}>5</button>
+            <button className='number-button right-side-number number-six' onClick={inputNum} value={6}>6</button>
             <button className='operator-button right-side-number divide'>/</button>
 
-            <button className='number-button left-side-number number-one'>1</button>
-            <button className='number-button left-side-number number-two'>2</button>
-            <button className='number-button right-side-number number-three'>3</button>
+            <button className='number-button left-side-number number-one' onClick={inputNum} value={1}>1</button>
+            <button className='number-button left-side-number number-two' onClick={inputNum} value={2}>2</button>
+            <button className='number-button right-side-number number-three' onClick={inputNum} value={3}>3</button>
             <button className='right-side-number equals'>=</button>
 
-            <button className='number-button left-side-number number-zero'>0</button>
-            <button className='number-button right-side-number dot'>.</button>
+            <button className='number-button left-side-number number-zero' onClick={inputNum} value={0}>0</button>
+            <button className='number-button right-side-number comma' onClick={inputNum} value={","}>,</button>
         </div>
       </section>
     )
