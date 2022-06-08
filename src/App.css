@@ -65,6 +65,7 @@ button:hover {
 .backspace {
   grid-area: 3 / 4 / 4 / 5;
   background-color: #064614;
+  text-align: center;
 }
 
 .plus {

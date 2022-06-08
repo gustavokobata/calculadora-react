@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { CgCornerUpLeft } from "react-icons/cg";
+
 import './App.css';
 
 
@@ -50,7 +52,7 @@ import './App.css';
             <button className='left-side-number clear' onClick={clear}>C</button>
             <button className='operator-button left-side-number plus' onClick={operatorHandler} value="+">+</button>
             <button className='operator-button right-side-number minus' onClick={operatorHandler} value="-">-</button>
-            <button className='right-side-number backspace' onClick={deleteNumber}>BS</button>
+            <button className='right-side-number backspace' onClick={deleteNumber}><CgCornerUpLeft /></button>
 
             <button className='number-button left-side-number number-seven' onClick={inputNum} value={7}>7</button>
             <button className='number-button left-side-number number-eight' onClick={inputNum} value={8}>8</button>
