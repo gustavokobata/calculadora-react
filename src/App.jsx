@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-
-// import Button from './components/Button';
-import './Calculator.css';
+import './App.css';
 
 
   const Calculator = () => {
@@ -36,8 +34,12 @@ import './Calculator.css';
       }
     }
 
-    function clear(e){
+    function clear() {
       setNum(0);
+    }
+
+    function deleteNumber() {
+      
     }
 
     return(
@@ -48,7 +50,7 @@ import './Calculator.css';
             <button className='left-side-number clear' onClick={clear}>C</button>
             <button className='operator-button left-side-number plus' onClick={operatorHandler} value="+">+</button>
             <button className='operator-button right-side-number minus' onClick={operatorHandler} value="-">-</button>
-            <button className='right-side-number backspace' onClick={inputNum}>BS</button>
+            <button className='right-side-number backspace' onClick={deleteNumber}>BS</button>
 
             <button className='number-button left-side-number number-seven' onClick={inputNum} value={7}>7</button>
             <button className='number-button left-side-number number-eight' onClick={inputNum} value={8}>8</button>
